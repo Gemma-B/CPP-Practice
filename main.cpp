@@ -1,5 +1,9 @@
 #include <iostream>
+#include "robot.h"
 int main() {
+    return 0;
+}
+int runProgram() {
     int choice;
     int distance;
     int drive = 1;
@@ -8,11 +12,13 @@ int main() {
     int score = 4;
     int armPosition = 0;
     int position = 0;
-    std::cout << "what would you like to do player? Press 1 to drive, 2 to move arm, 3 to pick up piece, and 4 to score" << std::endl;
+    std::cout << "Please choose: Press 1 to drive, 2 to move arm, 3 to pick up piece, and 4 to score" << std::endl;
     std::cin >> choice;
         if ( choice == drive ) {
-            RobotMove::Drive(int distance)
-        else if ( choice == moveArm ) {
+            std::cout << "RobotMove::Drive" << std::endl;
+            //RobotMove::Drive(distance, position)
+        }
+        if ( choice == moveArm ) {
             std::cout << "what position would you like the arm to be in? choose 0-10" << std::endl;
             std::cin >> armPosition;
             if ( 0<= armPosition && 10>= armPosition) {
@@ -22,16 +28,14 @@ int main() {
                 std::cout << "try again with a position between 0 and 10" << std::endl;
             }
         } 
-        }
-        else if (choice == pickPiece) {
+        if (choice == pickPiece) {
             std::cout << "not done yet" << std::endl;
         }
-        else if (choice == score) {
+        if (choice == score) {
             std::cout << "not done yet" << std::endl;
         }
-        else {
+        if (1 > choice && choice > 4) {
             std::cout << "you need to choose a number between 1-4" << std::endl;
         }
     return 0;
-
 }

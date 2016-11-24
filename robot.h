@@ -3,8 +3,8 @@
 
 class RobotMove {
     public:
-        void Drive(int Distance); 
-        void MoveArmTo(int Position);
+        void Drive(int distance, int position); 
+        void MoveArmTo(int armPosition);
         int ScorePiece();
         int PickUpPiece();
 };
