@@ -1,26 +1,37 @@
 #include <iostream>
 int main() {
     int choice;
-    int drive = 1;
     int distance;
+    int drive = 1;
+    int moveArm = 2;
+    int pickPiece = 3;
+    int score = 4;
+    int armPosition = 0;
     int position = 0;
     std::cout << "what would you like to do player? Press 1 to drive, 2 to move arm, 3 to pick up piece, and 4 to score" << std::endl;
     std::cin >> choice;
-        if (choice == drive) {
-            std::cout << "where would you like to move to? choose position 0-7" << std::endl;
-            std::cin >> distance;
-            if (0 <= distance && distance <= 7) {
-                std::cout << "The robot is now in position " << distance << std::endl;
-                position = distance;
-            };
+        if ( choice == drive ) {
+            RobotMove::Drive(int distance)
+        else if ( choice == moveArm ) {
+            std::cout << "what position would you like the arm to be in? choose 0-10" << std::endl;
+            std::cin >> armPosition;
+            if ( 0<= armPosition && 10>= armPosition) {
+                std::cout << "the arm is now in position " << armPosition << std::endl;
+            }
             else {
-                std::cout << "try again this time with a value of 0-7" << std::endl;
-            };
-        };
-        
+                std::cout << "try again with a position between 0 and 10" << std::endl;
+            }
+        } 
+        }
+        else if (choice == pickPiece) {
+            std::cout << "not done yet" << std::endl;
+        }
+        else if (choice == score) {
+            std::cout << "not done yet" << std::endl;
+        }
         else {
-            std::cout << "not finished yet" << std::endl;
-        };
+            std::cout << "you need to choose a number between 1-4" << std::endl;
+        }
     return 0;
 
-};
+}
