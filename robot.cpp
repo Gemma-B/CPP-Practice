@@ -1,8 +1,8 @@
 #include <iostream>
 #include "robot.h"
-int main() {
-    return 0;
-};
+//int main() {
+//    return 0;
+//};
         void RobotMove::Drive(int distance, int position) {
             std::cout << "where do you want your robot to move to? choose a position of 0-7" << std::endl;
             std::cin >> distance;
@@ -12,11 +12,53 @@ int main() {
             }
             else {
                 std::cout << "Try again, this time with a position of 0-7 :P" << std::endl;
+                std::cin >> distance;
+                if ( 0<= distance & 7>= distance ) {
+                    std::cout << "thanks for doing it right!" << std::endl;
+                    std::cout << "the robot is now in position " << distance << std::endl;
+                    position = distance;
+            }
+                else {
+                std::cout << "boi you know what you're supposed to do, and you still mess it up"  << std::endl;
+                }
+                }
+            }
+        void RobotMove::MoveArmTo(int armPosition){
+            std::cout << "what position would you like the arm to be in? choose 0-10" << std::endl;
+            std::cin >> armPosition;
+            if ( 0<= armPosition && 10>= armPosition) {
+                std::cout << "the arm is now in position " << armPosition << std::endl;
+            }
+            else { 
+                std::cout << "try again with a position between 0 and 10" << std::endl;
+         
+                std::cin >> armPosition;
+                if ( 0<= armPosition && 10>= armPosition ) {
+                    std::cout << "great job! the arm is now in position " << armPosition << std::endl;
+                }
+                else {
+                    std::cout << "man you still messed it up?!? you don't get a third chance." << std::endl;
+                }
         }
         }
-        void RobotMove::MoveArmTo(int position){
+        void RobotMove::ScorePiece(bool hasPiece, int armPosition, int position, int point){
+            if ( hasPiece == true && armPosition == 10 && position == 6){
+                std::cout << "you scored a point!" << std::endl;
+                point += 1;
+                std::cout << "your new score is " << point << std::endl;
+                hasPiece = false;
+            }
+            else {
+                std::cout << "Sorry, but to able to score you need to have a piece, have your arm in position 10, and be in position 6 on the field." << std::endl;
+                std::cout << "Currently your arm is in position " << armPosition << " and your bot is in position " << position << std::endl;
+            }
         }
-        int RobotMove::ScorePiece(){
-        }
-        int RobotMove::PickUpPiece(){
+        void RobotMove::PickUpPiece(bool hasPiece){
+            if ( hasPiece = false ) {
+                std::cout << "Hey you picked up a piece!" << std::endl;
+                hasPiece = true;
+            }
+            if ( hasPiece = true ) {
+                std::cout << "Sorry buddy! looks like you already have a piece" << std::endl;
+            }
         }
