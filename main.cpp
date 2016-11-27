@@ -2,7 +2,6 @@
 #include "robot.h"
 int main() {
     int choice;
-    int distance;
     int drive = 1;
     int moveArm = 2;
     int pickPiece = 3;
@@ -20,20 +19,25 @@ int main() {
     std::cout << "Choose: 1 to drive, 2 to move arm, 3 to pick up piece, and 4 to score" << std::endl;
     std::cin >> choice;
         if ( choice == drive ) {
+            std::cout << "where do you want your robot to move? choose a position of 0-7" << std::endl;
+            std::cin >> position;
             RobotMove rd; // You need to call RobotMove and give it a name ("rm" in this case")
-            rd.Drive(distance, position); // Now the function can be called (using a . instead of double ::)
+            rd.Drive(position); // Now the function can be called (using a . instead of double ::)
         }
         else if ( choice == moveArm ) {
+            std::cout << "what position is the arm gonna be in? choose 0-10" << std::endl;
+            std::cin >> armPosition;
             RobotMove ma;
             ma.MoveArmTo(armPosition);
         } 
         else if (choice == pickPiece) {
             RobotMove pp;
-            pp.PickUpPiece(hasPiece);
+            pp.PickUpPiece(point);
         }
         else if (choice == score) {
             RobotMove sp;
             sp.ScorePiece(hasPiece, armPosition, position, point);
+            hasPiece = false;
         }
         else {
             std::cout << "you know you need to choose a number between 1-4" << std::endl;
