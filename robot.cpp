@@ -42,21 +42,20 @@
             return armPosition;
         }
     int RobotMove::ScorePiece(bool hasPiece, int armPosition, int position, int point){
-            if ( armPosition == 10 && position == 6){
-                std::cout << "you scored a point!" << std::endl;
-                point += 1;
-                std::cout << "your new score is " << point << std::endl;
+            if ( armPosition == 10 && position == 6 && hasPiece != false){
+                point += 1
+                hasPiece = false; 
             }
             else {
                 std::cout << "Sorry, but to able to score you need to have a piece, have your arm in position 10, and be in position 6 on the field." << std::endl;
                 std::cout << "Currently your arm is in position " << armPosition << " and your bot is in position " << position << std::endl;
             }
-            return point;
+            return point, hasPiece;
         }
         bool RobotMove::PickUpPiece(bool hasPiece){
             if ( hasPiece == false ) {
-                std::cout << "Hey you picked up a piece!" << hasPiece << std::endl;
-                hasPiece == true;
+                std::cout << "Hey you picked up a piece!" << std::endl;
+                hasPiece = true;
             }
             else {
                 std::cout << "Sorry buddy! looks like you already have a piece" << std::endl;

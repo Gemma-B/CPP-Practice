@@ -32,12 +32,16 @@ int main() {
         } 
         else if (choice == pickPiece) {
             RobotMove pp;
-            pp.PickUpPiece(point);
-        }
+            pp.PickUpPiece(hasPiece);
+            }
         else if (choice == score) {
             RobotMove sp;
             sp.ScorePiece(hasPiece, armPosition, position, point);
-            hasPiece = false;
+            if (hasPiece == true && position == 6 && armPosition == 10) {
+                point += 1;
+                std::cout << "hey you got a point! Your new score is " << point << std::endl;
+                hasPiece == false;
+            }
         }
         else {
             std::cout << "you know you need to choose a number between 1-4" << std::endl;
