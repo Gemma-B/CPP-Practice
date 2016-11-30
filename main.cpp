@@ -21,8 +21,8 @@ int main() {
         if ( choice == drive ) {
             std::cout << "where do you want your robot to move? choose a position of 0-7" << std::endl;
             std::cin >> position;
-            RobotMove rd; // You need to call RobotMove and give it a name ("rm" in this case")
-            rd.Drive(position); // Now the function can be called (using a . instead of double ::)
+            RobotMove rd;
+            rd.Drive(position);
         }
         else if ( choice == moveArm ) {
             std::cout << "what position is the arm gonna be in? choose 0-10" << std::endl;
@@ -33,14 +33,15 @@ int main() {
         else if (choice == pickPiece) {
             RobotMove pp;
             pp.PickUpPiece(hasPiece);
-            }
+            hasPiece = true;
+        }
         else if (choice == score) {
             RobotMove sp;
             sp.ScorePiece(hasPiece, armPosition, position, point);
-            if (hasPiece == true && position == 6 && armPosition == 10) {
+            if (armPosition == 10 && position == 6) {
+                if ( hasPiece == true) {
                 point += 1;
-                std::cout << "hey you got a point! Your new score is " << point << std::endl;
-                hasPiece == false;
+                }
             }
         }
         else {
