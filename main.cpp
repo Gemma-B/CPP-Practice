@@ -41,6 +41,7 @@ int main() {
             if (armPosition == 10 && position == 6) {
                 if ( hasPiece == true) {
                 point += 1;
+                hasPiece = false;
                 }
             }
         }
