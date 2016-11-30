@@ -32,8 +32,10 @@ int main() {
         } 
         else if (choice == pickPiece) {
             RobotMove pp;
-            pp.PickUpPiece(hasPiece);
-            hasPiece = true;
+            pp.PickUpPiece(hasPiece, armPosition);
+            if ( hasPiece == false && armPosition == 0){
+                hasPiece = true;
+            }
         }
         else if (choice == score) {
             RobotMove sp;

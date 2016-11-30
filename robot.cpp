@@ -51,12 +51,15 @@
         }
             return point;
         }
-        bool RobotMove::PickUpPiece(bool hasPiece){
-            if (hasPiece == false){
+        bool RobotMove::PickUpPiece(bool hasPiece, int armPosition){
+            if (hasPiece == false && armPosition == 0){
                 std::cout << "Hey you picked up a piece!" << std::endl;
             }
+            else if (hasPiece == true) {
+                std::cout << "you already have a piece " << std::endl;
+            }
             else {
-                std::cout << "you already have a piece" << std::endl;
+                std::cout << "your arm needs to be in positon 0" << std::endl;
             }
             return hasPiece;
         }
