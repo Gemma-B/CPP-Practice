@@ -21,24 +21,24 @@ int main() {
         if ( choice == drive ) {
             std::cout << "where do you want your robot to move? choose a position of 0-7" << std::endl;
             std::cin >> position;
-            RobotMove rd;
-            rd.Drive(position);
+            robotGame::RobotMove rd;
+            rd.Drive(position) ;
         }
         else if ( choice == moveArm ) {
             std::cout << "what position is the arm gonna be in? choose 0-10" << std::endl;
             std::cin >> armPosition;
-            RobotMove ma;
+            robotGame::RobotMove ma;
             ma.MoveArmTo(armPosition);
         } 
         else if (choice == pickPiece) {
-            RobotMove pp;
+            robotGame::RobotMove pp;
             pp.PickUpPiece(hasPiece, armPosition);
             if ( hasPiece == false && armPosition == 0){
                 hasPiece = true;
             }
         }
         else if (choice == score) {
-            RobotMove sp;
+            robotGame::RobotMove sp;
             sp.ScorePiece(hasPiece, armPosition, position, point);
             if (armPosition == 10 && position == 6) {
                 if ( hasPiece == true) {

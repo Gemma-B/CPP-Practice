@@ -1,5 +1,6 @@
 #include <iostream>
 #include "robot.h"
+namespace robotGame {
     int RobotMove::Drive(int position) {
             if ( 0<= position && 7>= position) {
                 std::cout << "The robot is now in position " << position << std::endl;
@@ -63,3 +64,4 @@
             }
             return hasPiece;
         }
+}
