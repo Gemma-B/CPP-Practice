@@ -1,11 +1,13 @@
 #include <iostream>
-#include <vector>
-std::string book_title_;
+#include "book.cpp"
+#include "date.cpp"
 int day_;
 int month_;
 int year_;
-bool checked_out_ = false;
+std::string title;
 
 int main() {
-  DateCheckedOut(day_, month_, year_)
+  DateCheckedOut(day_, month_, year_);
+  Book person;  
+  return 0;
 }
