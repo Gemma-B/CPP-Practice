@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
-//namespace MathUtilities {
+#include "functions.h"
+namespace MathUtilities {
+  double p_n_;
   int main() {
+
     std::vector<int> numbers;
     double input_number_;
     double new_number_;
@@ -15,10 +18,11 @@
       new_number_ = input_number_;
     }
     std::cout << "good " << std::endl;
-  //run average function
+    Maths::Sign BOI;
+    BOI.Sign(p_n_);
   return 0;
   }
- // };
+};
 
 
 
