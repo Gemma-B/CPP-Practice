@@ -1,13 +1,11 @@
 #include <iostream>
-#include "book.cpp"
-#include "date.cpp"
+#include "book.h"
+#include "date.h"
 int day_;
 int month_;
 int year_;
 std::string title;
-
-int main() {
-  DateCheckedOut(day_, month_, year_);
-  Book person;  
+int main () {
+  Times date = DateCheckedOut();
   return 0;
 }

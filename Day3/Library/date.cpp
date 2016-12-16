@@ -1,21 +1,21 @@
 #include <iostream>
 #include "date.h"
 
-int Times::DateCheckedOut(int day_, int month_, int year_) {
-
+Times DateCheckedOut() {
+Times output;
 std::cout << "Hey, what is the day?" << std::endl;
-std::cin >> day_;
+std::cin >> output.day_;
 
-if (1 <= day_ && day_ <= 31){
+if (1 <= output.day_ && output.day_ <= 31){
   std::cout << "Ok, what month is is? (use numbers ex. Jan = 1, Feb = 2)" << std::endl;
-  std::cin >> month_;
+  std::cin >> output.month_;
   
-  if (1<= month_ && 12 >= month_){
+  if (1<= output.month_ && 12 >= output.month_){
     std::cout << "Cool! What year is it?" << std::endl;
-    std::cin >> year_;
+    std::cin >> output.year_;
     
-    if ( year_ >= 2016 ){
-      std::cout << "Nice! so it is " << day_ + month_ + year_ << std::endl;
+    if ( output.year_ >= 2016 ){
+      std::cout << day_ << "/" << month_ << "/" year_ << std::endl;
     }
     
     else {
@@ -32,5 +32,5 @@ else {
   std::cout << " Sorry, that day doesn't exist " << std::endl;
 }
 
-return day_, month_, year_;
-}
+return output;
+
