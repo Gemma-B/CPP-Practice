@@ -1,13 +1,14 @@
 #include <iostream>
 #include <vector>
+#include "functions.h"
 namespace MathUtilities {
   double p_n_;
   bool negative;
-  Maths::Average(){   
+  void Maths::Average(){   
     std::cout << "yo" << std::endl;
-  } 
+  }; 
   
-  Maths::Sign( p_n_ ) {
+  bool Maths::Sign( p_n_ ) {
     std::cin >> p_n_;
     
     if (p_n_ < 0) {
@@ -23,5 +24,6 @@ namespace MathUtilities {
     else {
       std::cout << "the number is 0" << std::endl; 
     }
+  return negative;
   }
-}
+};

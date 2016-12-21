@@ -18,8 +18,7 @@ namespace MathUtilities {
       new_number_ = input_number_;
     }
     std::cout << "good " << std::endl;
-    Maths::Sign BOI;
-    BOI.Sign(p_n_);
+    Maths BOI = Sign();
   return 0;
   }
 };
