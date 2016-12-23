@@ -16,7 +16,7 @@ int main () {
   std::cin >> title;
   std::cout << "whats your name?" << std::endl;
   std::cin >> name;
-  Library.l;
+  Library l;
   l.CheckOutBook;
       //(title, library.get_patron(name));  
   }
